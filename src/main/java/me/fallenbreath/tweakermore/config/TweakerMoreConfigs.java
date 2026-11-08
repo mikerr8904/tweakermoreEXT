@@ -38,6 +38,7 @@ import me.fallenbreath.tweakermore.TweakerMoreMod;
 import me.fallenbreath.tweakermore.config.options.*;
 import me.fallenbreath.tweakermore.config.options.listentries.*;
 import me.fallenbreath.tweakermore.gui.TweakerMoreConfigGui;
+import me.fallenbreath.tweakermore.impl.features.autoClickFurnace.AutoClickFurnace;
 import me.fallenbreath.tweakermore.impl.features.autoContainerProcess.AutoContainerProcessorHintRenderer;
 import me.fallenbreath.tweakermore.impl.features.copyItemDataToClipBoard.ItemDataCopier;
 import me.fallenbreath.tweakermore.impl.features.copySignTextToClipBoard.SignTextCopier;
@@ -91,6 +92,9 @@ public class TweakerMoreConfigs
 	////////////////////
 	//    Features    //
 	////////////////////
+
+	@Config(type = Config.Type.TWEAK, category = Config.Category.FEATURES)
+	public static final TweakerMoreConfigBooleanHotkeyed AUTO_CLICK_FURNACE = newConfigBooleanHotkeyed("autoClickFurnace");
 
 	@Config(type = Config.Type.TWEAK, restriction = @Restriction(require = @Condition(ModIds.itemscroller)), category = Config.Category.FEATURES)
 	public static final TweakerMoreConfigBooleanHotkeyed AUTO_CLEAN_CONTAINER = newConfigBooleanHotkeyed("autoCleanContainer");
@@ -208,6 +212,12 @@ public class TweakerMoreConfigs
 			category = Config.Category.FEATURES
 	)
 	public static final TweakerMoreConfigBoolean AUTO_COLLECT_MATERIAL_LIST_ITEM_TAKE_SHULKER_BOXES = newConfigBoolean("autoCollectMaterialListItemTakeShulkerBoxes", false);
+
+	@Config(type = Config.Type.TWEAK, restriction = @Restriction(require = @Condition(ModIds.itemscroller)), category = Config.Category.FEATURES)
+	public static final TweakerMoreConfigBooleanHotkeyed AUTO_EMPTY_FURNACE = newConfigBooleanHotkeyed("autoEmptyFurnace");
+
+	@Config(type = Config.Type.GENERIC, restriction = @Restriction(require = @Condition(ModIds.itemscroller)), category = Config.Category.FEATURES)
+	public static final TweakerMoreConfigBoolean AUTO_EMPTY_FURNACE_CLOSE_GUI = newConfigBoolean("autoEmptyFurnaceCloseGui", true);
 
 	@Config(type = Config.Type.TWEAK, restriction = @Restriction(require = @Condition(ModIds.itemscroller)), category = Config.Category.FEATURES)
 	public static final TweakerMoreConfigBooleanHotkeyed AUTO_FILL_CONTAINER = newConfigBooleanHotkeyed("autoFillContainer");
@@ -1126,6 +1136,7 @@ public class TweakerMoreConfigs
 
 		//////////// Event Listeners ////////////
 
+		TickHandler.getInstance().registerClientTickHandler(AutoClickFurnace::onClientTick);
 		TickHandler.getInstance().registerClientTickHandler(LitematicaAutoRefreshMaterialListHelper.getInstance());
 		TickHandler.getInstance().registerClientTickHandler(LowerExplosionSoundLimitPerTickHelper::onClientTick);
 		TickHandler.getInstance().registerClientTickHandler(ServerDataSyncer.getInstance());

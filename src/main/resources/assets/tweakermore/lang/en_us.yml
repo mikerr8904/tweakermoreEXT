@@ -2,6 +2,13 @@ tweakermore:
   config:
     # ================================ Features ================================
 
+    autoClickFurnace:
+      .: autoClickFurnace
+      comment: |-
+        Right-click a furnace, blast furnace, or smoker once when looking at it within interaction range.
+        Look at a different block before the same furnace can be clicked again.
+        Does not click while sneaking, using an item, or a screen is open.
+      pretty_name: Auto Click Furnace
     autoCleanContainer:
       .: autoCleanContainer
       comment: |-
@@ -77,6 +84,16 @@ tweakermore:
         When using @option#autoCollectMaterialListItem@, also collect shulker boxes that only contain
         a single required item and meet @option#autoCollectMaterialListItemShulkerBoxFillThreshold@
       pretty_name: Auto Collect Material List Item - Take Single-Material Shulker Boxes
+    autoEmptyFurnace:
+      .: autoEmptyFurnace
+      comment: |-
+        Automatically transfer the output of furnaces, blast furnaces, and smokers to your inventory.
+        Other automatic container processors are skipped for these menus.
+      pretty_name: Auto Empty Furnace
+    autoEmptyFurnaceCloseGui:
+      .: autoEmptyFurnaceCloseGui
+      comment: Close the furnace GUI after using @option#autoEmptyFurnace@
+      pretty_name: Auto Empty Furnace - Close GUI
     autoFillContainer:
       .: autoFillContainer
       comment: |-
@@ -1300,6 +1317,8 @@ tweakermore:
         target_remaining: ', %1$s short of collection target'
       took_nothing: Took nothing required in the material list from %1$s
       no_material_list: No material list is activated
+    autoEmptyFurnace:
+      output_remaining: Some furnace output could not be collected; your inventory may be full
     autoFillContainer:
       container_filled: Filled %1$s with all %2$s items (%3$s)
       best_slot_not_found: Most suitable item to fill the container not found

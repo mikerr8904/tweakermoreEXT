@@ -2,6 +2,17 @@
 
 TweakerMore提供的新功能
 
+### 自动点击熔炉 (autoClickFurnace)
+
+在交互范围内看向熔炉、高炉或烟熏炉时自动右键点击一次。
+需要看向另一个方块才能再次点击同一个熔炉；看向空处不会重置。
+潜行、使用物品或打开界面时不会点击。可与自动清空熔炉产物配合使用。
+
+- 分类: 功能
+- 类型: 带热键布尔值 (工具)
+- 默认值: *无快捷键*, `false`
+
+
 ### 自动清空容器 (autoCleanContainer)
 
 打开容器后，自动将容器内的所有物品扔出
@@ -226,6 +237,27 @@ TweakerMore提供的新功能
     - Item Scroller (`itemscroller`)
 
 
+### 自动清空熔炉产物 (autoEmptyFurnace)
+
+自动将熔炉、高炉和烟熏炉的产物转移到玩家物品栏，不会取走原料或燃料。
+物品栏空间不足时，剩余产物留在熔炉中。这些界面不会执行其他自动容器处理功能。
+
+- 分类: 功能
+- 类型: 带热键布尔值 (工具)
+- 默认值: *无快捷键*, `false`
+- 依赖模组: Item Scroller (`itemscroller`)
+
+
+### 自动清空熔炉产物-关闭GUI (autoEmptyFurnaceCloseGui)
+
+使用自动清空熔炉产物后关闭界面。处理之前服务器仍会打开界面。
+
+- 分类: 功能
+- 类型: 布尔值 (通用)
+- 默认值: `true`
+- 依赖模组: Item Scroller (`itemscroller`)
+
+
 ### 自动装填容器 (autoFillContainer)
 
 打开容器后，自动使用物品栏中占用格子数最多的物品装填容器
@@ -332,6 +364,8 @@ TweakerMore提供的新功能
 ### 自动容器处理提示 (containerProcessorHint)
 
 在界面右上角显示自动容器处理相关功能的开启情况，包括：
+
+- 自动清空熔炉产物 (autoEmptyFurnace)
 
 - 自动清空容器 (autoCleanContainer)
 
@@ -3092,5 +3126,3 @@ TweakerMore的调试模式
 - 分类: 配置
 - 类型: 带热键布尔值 (工具)
 - 默认值: *无快捷键*, `false`
-
-

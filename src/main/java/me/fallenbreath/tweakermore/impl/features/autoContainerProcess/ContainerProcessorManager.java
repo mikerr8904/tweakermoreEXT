@@ -38,6 +38,7 @@ import java.util.stream.Collectors;
 public class ContainerProcessorManager
 {
 	private static final List<IContainerProcessor> CONTAINER_PROCESSORS = ImmutableList.of(
+			new FurnaceOutputEmptier(),
 			new ContainerCleaner(),
 			new ContainerFiller(),
 			new ContainerItemPutBackProcessor(),

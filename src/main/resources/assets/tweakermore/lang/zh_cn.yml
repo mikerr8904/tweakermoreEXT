@@ -2,6 +2,13 @@ tweakermore:
   config:
     # ================================ Features ================================
 
+    autoClickFurnace:
+      .: 自动点击熔炉
+      comment: |-
+        在交互范围内看向熔炉、高炉或烟熏炉时，自动右键点击一次。
+        需要看向另一个方块才能再次点击同一个熔炉。
+        潜行、使用物品或打开界面时不会点击。
+      pretty_name: 自动点击熔炉
     autoCleanContainer:
       .: 自动清空容器
       comment: |-
@@ -77,6 +84,16 @@ tweakermore:
         使用@option#autoCollectMaterialListItem@时，也会拿取仅装有同一种所需物品且
         达到@option#autoCollectMaterialListItemShulkerBoxFillThreshold@的潜影盒
       pretty_name: 自动收集材料列表物品-拿取单一材料潜影盒
+    autoEmptyFurnace:
+      .: 自动清空熔炉产物
+      comment: |-
+        自动将熔炉、高炉和烟熏炉的产物转移到玩家物品栏。
+        这些界面不会执行其他自动容器处理功能。
+      pretty_name: 自动清空熔炉产物
+    autoEmptyFurnaceCloseGui:
+      .: 自动清空熔炉产物-关闭GUI
+      comment: 使用@option#autoEmptyFurnace@后关闭熔炉界面
+      pretty_name: 自动清空熔炉产物-关闭GUI
     autoFillContainer:
       .: 自动装填容器
       comment: |-
@@ -1299,6 +1316,8 @@ tweakermore:
         target_remaining: '，距拿取目标还差 %1$s'
       took_nothing: 未在%1$s中收集任何材料列表中需要的物品
       no_material_list: 没有生效的材料列表
+    autoEmptyFurnace:
+      output_remaining: 部分熔炉产物无法收集，物品栏可能已满
     autoFillContainer:
       container_filled: 已使用所有 %2$s 物品装填容器 %1$s (%3$s)
       best_slot_not_found: 未找到最适合装填容器的物品

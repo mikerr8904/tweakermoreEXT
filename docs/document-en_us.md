@@ -2,6 +2,18 @@
 
 New features provided by TweakerMore
 
+### autoClickFurnace
+
+Automatically right-click a furnace, blast furnace, or smoker once when looking at it within interaction range.
+Look at a different block before the same furnace can be clicked again; looking into empty space does not reset it.
+No click is made while sneaking, using an item, or a screen is open.
+Combine with autoEmptyFurnace to collect the output.
+
+- Category: Features
+- Type: hotkey togglable boolean (Tweak)
+- Default value: *no hotkey*, `false`
+
+
 ### autoCleanContainer
 
 Automatically drops everything in the opened container
@@ -226,6 +238,28 @@ a single required item and meet Auto Collect Material List Item - Minimum Shulke
     - Item Scroller (`itemscroller`)
 
 
+### autoEmptyFurnace
+
+Automatically transfers the output of furnaces, blast furnaces, and smokers to your inventory.
+Input and fuel are not touched. If the inventory is full, remaining output stays in the furnace.
+Other automatic container processors are skipped for these menus.
+
+- Category: Features
+- Type: hotkey togglable boolean (Tweak)
+- Default value: *no hotkey*, `false`
+- Required mod: Item Scroller (`itemscroller`)
+
+
+### autoEmptyFurnaceCloseGui
+
+Close the furnace GUI after using autoEmptyFurnace. The GUI is opened by the server before processing.
+
+- Category: Features
+- Type: boolean (Generic)
+- Default value: `true`
+- Required mod: Item Scroller (`itemscroller`)
+
+
 ### autoFillContainer
 
 Automatically fill the opened container with the most numerous item stack in your inventory
@@ -332,6 +366,8 @@ and then close the merchant screen
 ### containerProcessorHint
 
 Displays the enabling status of auto container processing related features, including:
+
+- autoEmptyFurnace
 
 - autoCleanContainer
 
@@ -3098,5 +3134,3 @@ and debugging related functions will be enabled
 - Category: Setting
 - Type: hotkey togglable boolean (Tweak)
 - Default value: *no hotkey*, `false`
-
-
